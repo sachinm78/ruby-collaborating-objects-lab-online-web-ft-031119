@@ -37,4 +37,6 @@ class Artist
     artist.save
     artist
   end
+  
+  
 end
