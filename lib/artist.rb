@@ -1,23 +1,23 @@
-class Artist 
-  attr_accessor :name 
+class Artist
+  attr_accessor :name, :songs
   
-  @@all = []
-  
+  @@all = 
+
   def initialize(name)
     @name = name
     @songs = []
   end
-  
+
   def add_song(song)
-    self.songs << song
-    song.artist = self
+    self.songs << song    #Artist.songs reader returns all songs 
+                          #stored in @songs
   end
-  
-  def songs
-    @songs
+
+  def save
+    @@all << self     #saves all created instances of Artist class in 
+                      #@@all class variable
   end
-  
-  def save 
-    @@all << self.song
+
+  def self.all      #class method all returns all instances of Artist class 
+    @@all
   end
-end
